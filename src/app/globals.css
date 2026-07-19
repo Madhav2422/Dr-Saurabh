@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: #38bdf8;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,28 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ECG-style heartbeat pulse for the eyebrow dot — subtle medical signature */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  15% { transform: scale(1.4); opacity: 1; }
+  30% { transform: scale(1); opacity: 0.9; }
+  45% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 0 12px rgba(56, 189, 248, 0); }
+  60% { transform: scale(1); opacity: 0.9; }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+/* Slow zoom-out for the hero bg — cinematic Ken Burns */
+@keyframes slow-zoom {
+  from { transform: scale(1.15); }
+  to { transform: scale(1.0); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 18s ease-out forwards;
 }
