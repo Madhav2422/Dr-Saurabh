@@ -20,7 +20,7 @@ export default function ExperienceHero() {
           className="mb-6 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] text-accent"
         >
           <span className="h-px w-8 bg-accent/50" />
-          Experience
+         Portfolio
           <span className="h-px w-8 bg-accent/50" />
         </motion.div>
 

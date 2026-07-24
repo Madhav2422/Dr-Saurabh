@@ -1,35 +1,33 @@
-import Image from "next/image";
-
 export default function HeroBackground() {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 animate-slow-zoom">
-        <Image
-          src="/hero-bg.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
 
-      {/* Mobile: stronger top-down dark for text readability, image still visible */}
-      {/* Mobile: darker overall for crisp text */}
+      {/* Mobile — Next Image works fine for portrait */}
       <div
-        className="absolute inset-0 md:hidden"
+        className="absolute inset-0 animate-slow-zoom md:hidden"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(2,6,12,0.92) 0%, rgba(2,6,12,0.7) 40%, rgba(2,6,12,0.65) 65%, rgba(2,6,12,0.95) 100%)",
+          backgroundImage: "url('/gallery-9.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "30% 8%",
         }}
       />
 
-      {/* Desktop: original angled gradient */}
+      {/* Desktop — plain div so objectPosition actually works */}
       <div
-        className="absolute inset-0 hidden md:block"
+        className="absolute inset-0 hidden animate-slow-zoom md:block"
+        style={{
+          backgroundImage: "url('/gallery-9.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "35% 23%",
+        }}
+      />
+
+      {/* Unified dark overlay */}
+      <div
+        className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(100deg, rgba(4,10,18,0.96) 0%, rgba(4,10,18,0.85) 35%, rgba(8,20,32,0.55) 65%, rgba(8,20,32,0.35) 100%)",
+            "linear-gradient(100deg, rgba(3,8,18,0.88) 0%, rgba(3,8,18,0.75) 30%, rgba(3,8,18,0.55) 55%, rgba(3,8,18,0.40) 100%)",
         }}
       />
     </div>

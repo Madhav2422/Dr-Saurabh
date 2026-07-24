@@ -56,8 +56,7 @@ export default function ContactHero() {
           transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
-          Available for consultations, speaking engagements, and professional
-          collaboration.
+         Open to professional collaborations, academic discussions, research opportunities, conference invitations, and Emergency Medicine networking.
         </motion.p>
       </div>
     </section>

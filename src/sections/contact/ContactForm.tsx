@@ -27,7 +27,7 @@ export default function ContactForm() {
         transition={{ duration: 0.5 }}
         className="font-serif text-xl font-bold text-white sm:text-2xl"
       >
-        Send a Message
+       Let's Connect
       </motion.h2>
 
       <AnimatePresence mode="wait">
@@ -75,7 +75,7 @@ export default function ContactForm() {
               whileTap={{ scale: 0.98 }}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-zinc-950 shadow-lg shadow-sky-500/25 transition-shadow hover:shadow-sky-500/45"
             >
-              Send Message
+              Send Enquiry
               <span aria-hidden>→</span>
             </motion.button>
           </motion.form>

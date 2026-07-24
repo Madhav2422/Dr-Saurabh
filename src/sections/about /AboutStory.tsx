@@ -24,16 +24,10 @@ export default function AboutStory() {
 
       <div className="mt-6 flex flex-col gap-5 text-[15px] leading-relaxed text-zinc-400 sm:text-base">
         <p>
-          My journey in emergency medicine began during medical school when I
-          witnessed the incredible impact of rapid, decisive care during a mass
-          casualty drill. That moment crystallized my calling — to be there
-          when every second counts.
+          Emergency Medicine is where knowledge, teamwork, and decisive action come together to make the greatest impact. Every patient presents a unique challenge, requiring rapid assessment, sound clinical judgment, and timely intervention. This dynamic environment is what continues to inspire my commitment to Emergency Medicine.
         </p>
         <p>
-          Over 15 years later, that same urgency and purpose drives me every
-          shift. From leading trauma resuscitations to mentoring the next
-          generation of emergency physicians, I believe exceptional emergency
-          care combines clinical excellence with genuine human compassion.
+         Throughout my residency, I have managed diverse emergency presentations ranging from cardiac arrest, trauma, stroke, and sepsis to pediatric emergencies and toxicological cases. Alongside clinical practice, I actively participate in research, academic conferences, and continuous learning, with the goal of advancing Emergency Medicine and improving patient outcomes through evidence-based practice.
         </p>
       </div>
     </motion.div>

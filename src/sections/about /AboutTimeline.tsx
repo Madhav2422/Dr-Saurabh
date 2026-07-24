@@ -45,7 +45,7 @@ export default function AboutTimeline() {
           const isLeft = i % 2 === 0;
           return (
             <motion.div
-              key={event.year}
+           key={`${event.year}-${i}`}
               initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}

@@ -9,25 +9,25 @@ export const credentials: Credential[] = [
     icon: "ti-school",
     title: "Education",
     description:
-      "MD from Johns Hopkins School of Medicine, Residency at Massachusetts General Hospital",
+      "MBBS (2017–2023) • GMERS Medical College, Junagadh\nDNB Emergency Medicine (2023–2026) • Manipal Hospital, New Delhi",
   },
   {
     icon: "ti-stethoscope",
-    title: "Specialization",
+    title: "Clinical Interests",
     description:
-      "Emergency Medicine with subspecialty training in Trauma and Critical Care",
+      "Emergency Resuscitation, Emergency Procedures, Point-of-Care Ultrasound (POCUS), Trauma Care, Critical Care, Cardiac Emergencies, Neurocritical Care, and Clinical Toxicology.",
   },
   {
-    icon: "ti-certificate",
-    title: "Board Certification",
+    icon: "ti-microscope",
+    title: "Research & Thesis",
     description:
-      "American Board of Emergency Medicine, Advanced Trauma Life Support Instructor",
+      "Measurement of Bedside Ultrasound Guided Optic Nerve Sheath Diameter (ONSD) for Detection of Raised Intracranial Pressure in Non-Traumatic Neurocritical Patients.",
   },
   {
-    icon: "ti-award",
-    title: "Recognition",
+    icon: "ti-presentation",
+    title: "Academic Activities",
     description:
-      "Excellence in Emergency Care Award, Top Physician in Critical Response 2024",
+      "Poster presentations at national Emergency Medicine conferences, Continuing Medical Education (CME), journal discussions, case presentations, and clinical research.",
   },
 ];
 
@@ -39,28 +39,36 @@ export type TimelineEvent = {
 
 export const timeline: TimelineEvent[] = [
   {
-    year: "2008",
-    title: "Medical School",
-    description: "Began the journey at Johns Hopkins School of Medicine.",
-  },
-  {
-    year: "2012",
-    title: "Residency",
-    description: "Emergency Medicine residency at Massachusetts General Hospital.",
-  },
-  {
-    year: "2016",
-    title: "Trauma Fellowship",
-    description: "Subspecialty training in trauma and critical care.",
-  },
-  {
-    year: "2018",
-    title: "Attending Physician",
-    description: "Joined City General Hospital's Level 1 Trauma Center.",
+    year: "2017",
+    title: "Beginning the Journey",
+    description:
+      "Started MBBS at GMERS Medical College, Junagadh, where I developed a strong foundation in clinical medicine and discovered my passion for acute patient care.",
   },
   {
     year: "2023",
-    title: "ER Department Lead",
-    description: "Leading a team of 40+ emergency care professionals.",
+    title: "Medical Graduate",
+    description:
+      "Completed MBBS and chose Emergency Medicine as my career path.",
+  },
+  {
+    year: "2023",
+    title: "Emergency Medicine Residency",
+    description:
+      "Joined Manipal Hospital, New Delhi, for DNB Emergency Medicine residency with comprehensive exposure to high-acuity emergency care.",
+  },
+  {
+    year: "2024",
+    title: "Research & Academic Development",
+    description:
+      "Presented scientific posters at national Emergency Medicine conferences and pursued research in emergency ultrasound, with a thesis focusing on optic nerve sheath diameter (ONSD) for detecting raised intracranial pressure.",
+  },
+  {
+    year: "2026",
+    title: "Emergency Medicine Specialist",
+    description:
+      "Completed DNB Emergency Medicine, committed to delivering evidence-based emergency care while continuing to grow through research, teaching, and lifelong learning.",
   },
 ];
+
+export const philosophy =
+  "Every second counts in Emergency Medicine. My goal is to combine rapid clinical decision-making, evidence-based practice, and compassionate patient care to deliver the best possible outcomes.";

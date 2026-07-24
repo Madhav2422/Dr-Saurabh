@@ -32,7 +32,7 @@ export default function HeroContent() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
         </span>
-        Emergency Medicine Specialist
+        Emergency Medicine Specialist | DNB Emergency Medicine
       </motion.div>
 
       <motion.h1
@@ -44,7 +44,7 @@ export default function HeroContent() {
         <br />
         <span className="text-accent">When It Matters</span>
         <br />
-        Most
+        The Most
       </motion.h1>
 
       <motion.p
@@ -52,9 +52,7 @@ export default function HeroContent() {
         className="mt-6 max-w-xl border-l-2 border-accent/40 pl-4 text-[15px] leading-relaxed text-zinc-100 sm:mt-8 sm:pl-5 sm:text-lg sm:text-zinc-300"
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
       >
-        Board-certified Emergency Medicine physician with over 15 years of
-        experience in high-acuity trauma care, critical resuscitation, and
-        emergency department leadership.
+        Dedicated Emergency Medicine physician committed to providing rapid, compassionate and evidence-based care for critically ill and injured patients.
       </motion.p>
     </motion.div>
   );

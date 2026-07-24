@@ -7,45 +7,52 @@ export type Expertise = {
 
 export const expertiseData: Expertise[] = [
   {
-    id: "trauma",
+    id: "resuscitation",
     icon: "ti-first-aid-kit",
-    title: "Trauma & Resuscitation",
+    title: "Emergency Resuscitation",
     description:
-      "Advanced trauma life support and critical care resuscitation in high-acuity scenarios.",
+      "Comprehensive management of cardiac arrest, anaphylaxis, shock, airway emergencies, and post-resuscitation care, guided by current ACLS principles and evidence-based emergency medicine protocols.",
   },
   {
-    id: "cardiac",
-    icon: "ti-heart",
-    title: "Cardiac Emergencies",
+    id: "pocus",
+    icon: "ti-scan",
+    title: "Point-of-Care Ultrasound (POCUS)",
     description:
-      "Rapid assessment and intervention for acute myocardial infarction, arrhythmias, and cardiac arrest.",
+      "Bedside ultrasound for rapid diagnosis and procedural guidance, including eFAST, lung, cardiac, IVC, DVT, ocular ultrasound, and shock assessment, enabling timely clinical decision-making in critically ill patients.",
+  },
+  {
+    id: "critical-care",
+    icon: "ti-heartbeat",
+    title: "Critical Care & Procedural Medicine",
+    description:
+      "Management of critically ill patients with sepsis, septic shock, respiratory failure, hemodynamic instability, and multiorgan dysfunction requiring advanced airway management, mechanical ventilation, vasopressor support, and bedside emergency procedures.",
+  },
+  {
+    id: "acute-medical",
+    icon: "ti-stethoscope",
+    title: "Acute Medical Emergencies",
+    description:
+      "Comprehensive management of time-sensitive medical emergencies including cardiovascular, respiratory, neurological, endocrine, renal, and infectious conditions.",
+  },
+  {
+    id: "trauma-surgical",
+    icon: "ti-ambulance",
+    title: "Trauma & Acute Surgical Care",
+    description:
+      "Systematic assessment, triage, and multidisciplinary management of traumatic injuries and acute surgical emergencies following current evidence-based protocols.",
+  },
+  {
+    id: "toxicology",
+    icon: "ti-flask",
+    title: "Clinical Toxicology",
+    description:
+      "Diagnosis and management of poisoning, drug overdoses, envenomation, and environmental toxic exposures using a structured, evidence-based emergency medicine approach.",
   },
   {
     id: "pediatric",
     icon: "ti-baby-carriage",
     title: "Pediatric Emergencies",
     description:
-      "Specialized care for critically ill and injured children in emergency settings.",
-  },
-  {
-    id: "toxicology",
-    icon: "ti-flask",
-    title: "Toxicology",
-    description:
-      "Expert management of poisonings, overdoses, and environmental exposures.",
-  },
-  {
-    id: "procedural",
-    icon: "ti-tools",
-    title: "Procedural Skills",
-    description:
-      "Advanced airway management, central lines, chest tubes, and bedside ultrasound.",
-  },
-  {
-    id: "disaster",
-    icon: "ti-alert-triangle",
-    title: "Disaster Medicine",
-    description:
-      "Mass casualty incident management and emergency preparedness leadership.",
+      "Comprehensive assessment, timely stabilization, and evidence-based management of critically ill and injured infants and children, with expertise in pediatric resuscitation and emergency care.",
   },
 ];

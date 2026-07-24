@@ -8,8 +8,8 @@ export default function HeroActions() {
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 1.05, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="mt-10 flex flex-wrap gap-4"
+      transition={{ duration: 0.7, delay: 1.05, ease: "easeOut" }}
+      className="mt-16 flex flex-wrap gap-4 sm:mt-10"
     >
       <Link
         href="/contact"
@@ -17,13 +17,6 @@ export default function HeroActions() {
       >
         Get in touch
         <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-      </Link>
-
-      <Link
-        href="/experience"
-        className="inline-flex items-center rounded-md border border-white/25 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
-      >
-        View Experience
       </Link>
     </motion.div>
   );
