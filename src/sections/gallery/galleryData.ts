@@ -20,7 +20,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g3",
-    src: "/gallery-4.jpeg",
+    src: "/gallery-9.jpeg",
     alt: "Ultrasound-guided procedure with the EM team",
   },
 

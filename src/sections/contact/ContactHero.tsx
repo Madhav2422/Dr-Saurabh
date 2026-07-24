@@ -13,26 +13,8 @@ export default function ContactHero() {
       />
 
       <div className="relative mx-auto max-w-2xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-6 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] text-accent"
-        >
-          <motion.span
-            initial={{ width: 0 }}
-            animate={{ width: 32 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="h-px bg-accent/50"
-          />
-          Contact
-          <motion.span
-            initial={{ width: 0 }}
-            animate={{ width: 32 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="h-px bg-accent/50"
-          />
-        </motion.div>
+    
+      
 
         <h1 className="font-serif text-4xl font-bold text-white sm:text-6xl">
           {["Get", "in", "Touch"].map((word, i) => (

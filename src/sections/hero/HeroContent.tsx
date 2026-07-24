@@ -32,7 +32,9 @@ export default function HeroContent() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
         </span>
-        Emergency Medicine Specialist | DNB Emergency Medicine
+        Emergency Medicine Specialist |{" "}
+        <br className="sm:hidden" />
+        DNB Emergency Medicine
       </motion.div>
 
       <motion.h1

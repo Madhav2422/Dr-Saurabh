@@ -1,19 +1,19 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import type { Expertise } from "./expertiseData";
 
 export default function ExpertiseRow({
   item,
   index,
+  isActive,
+  onActivate,
 }: {
   item: Expertise;
   index: number;
+  isActive: boolean;
+  onActivate: () => void;
 }) {
-  const [hovered, setHovered] = useState(false);
-  const [tapped, setTapped] = useState(false);
-  const active = hovered || tapped;
   const isEven = index % 2 === 0;
 
   return (
@@ -22,10 +22,10 @@ export default function ExpertiseRow({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={() => setTapped((v) => !v)}
-      className="group relative cursor-pointer border-b border-white/8 sm:cursor-default"
+      onMouseEnter={onActivate}
+      onMouseLeave={() => {}} // desktop hover handled via isActive from parent
+      onClick={onActivate}
+      className="group relative cursor-pointer border-b border-white/8"
       style={{
         background: isEven ? "rgba(255,255,255,0.012)" : "transparent",
       }}
@@ -34,7 +34,7 @@ export default function ExpertiseRow({
       <motion.div
         className="absolute inset-y-0 left-0 bg-accent/[0.05]"
         initial={{ width: 0 }}
-        animate={{ width: active ? "100%" : 0 }}
+        animate={{ width: isActive ? "100%" : 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
       />
 
@@ -42,17 +42,17 @@ export default function ExpertiseRow({
       <motion.div
         className="absolute inset-y-0 left-0 w-[2px] bg-accent"
         initial={{ scaleY: 0 }}
-        animate={{ scaleY: active ? 1 : 0 }}
+        animate={{ scaleY: isActive ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        style={{ originY: 0, boxShadow: active ? "0 0 12px rgba(56,189,248,0.6)" : "none" }}
+        style={{ originY: 0, boxShadow: isActive ? "0 0 12px rgba(56,189,248,0.6)" : "none" }}
       />
 
       <div className="relative flex items-center gap-6 py-8 pl-6 pr-4 sm:gap-10 sm:py-10 sm:pl-10">
         {/* Number */}
         <motion.span
           animate={{
-            color: active ? "#38bdf8" : "rgba(255,255,255,0.25)",
-            scale: active ? 1.1 : 1,
+            color: isActive ? "#38bdf8" : "rgba(255,255,255,0.25)",
+            scale: isActive ? 1.1 : 1,
           }}
           transition={{ duration: 0.3 }}
           className="font-mono text-sm tracking-widest sm:text-base"
@@ -63,17 +63,17 @@ export default function ExpertiseRow({
         {/* Title + description */}
         <div className="min-w-0 flex-1">
           <motion.h3
-            animate={{ x: active ? 12 : 0 }}
+            animate={{ x: isActive ? 12 : 0 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
             className={`font-serif text-2xl font-bold transition-colors duration-300 sm:text-4xl ${
-              active ? "text-accent" : "text-white"
+              isActive ? "text-accent" : "text-white"
             }`}
           >
             {item.title}
           </motion.h3>
 
           <AnimatePresence>
-            {active && (
+            {isActive && (
               <motion.p
                 initial={{ height: 0, opacity: 0, marginTop: 0 }}
                 animate={{ height: "auto", opacity: 1, marginTop: 10 }}
@@ -87,10 +87,10 @@ export default function ExpertiseRow({
           </AnimatePresence>
         </div>
 
-        {/* Icon badge with radar pulse — desktop only */}
+        {/* Icon badge — desktop only */}
         <div className="relative hidden h-16 w-16 shrink-0 items-center justify-center sm:flex">
           <AnimatePresence>
-            {active && (
+            {isActive && (
               <>
                 <motion.span
                   initial={{ scale: 0.5, opacity: 0.6 }}
@@ -103,12 +103,7 @@ export default function ExpertiseRow({
                   initial={{ scale: 0.5, opacity: 0.6 }}
                   animate={{ scale: 1.8, opacity: 0 }}
                   exit={{ opacity: 0 }}
-                  transition={{
-                    duration: 1.4,
-                    repeat: Infinity,
-                    ease: "easeOut",
-                    delay: 0.5,
-                  }}
+                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
                   className="absolute h-12 w-12 rounded-full border border-accent"
                 />
               </>
@@ -117,12 +112,10 @@ export default function ExpertiseRow({
 
           <motion.div
             animate={{
-              rotate: active ? 360 : 0,
-              borderColor: active ? "rgba(56,189,248,0.6)" : "rgba(255,255,255,0.1)",
-              backgroundColor: active
-                ? "rgba(56,189,248,0.1)"
-                : "rgba(255,255,255,0.02)",
-              boxShadow: active ? "0 0 20px rgba(56,189,248,0.15)" : "none",
+              rotate: isActive ? 360 : 0,
+              borderColor: isActive ? "rgba(56,189,248,0.6)" : "rgba(255,255,255,0.1)",
+              backgroundColor: isActive ? "rgba(56,189,248,0.1)" : "rgba(255,255,255,0.02)",
+              boxShadow: isActive ? "0 0 20px rgba(56,189,248,0.15)" : "none",
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative flex h-12 w-12 items-center justify-center rounded-full border"
@@ -131,7 +124,7 @@ export default function ExpertiseRow({
               className={`ti ${item.icon}`}
               style={{
                 fontSize: "20px",
-                color: active ? "#38bdf8" : "rgba(255,255,255,0.3)",
+                color: isActive ? "#38bdf8" : "rgba(255,255,255,0.3)",
               }}
               aria-hidden="true"
             />
@@ -141,28 +134,20 @@ export default function ExpertiseRow({
         {/* Arrow */}
         <motion.span
           animate={{
-            rotate: tapped ? 90 : 0,
-            x: active ? 6 : 0,
-            opacity: active ? 1 : 0.2,
+            rotate: isActive ? 90 : 0,
+            x: isActive ? 6 : 0,
+            opacity: isActive ? 1 : 0.2,
           }}
           transition={{ duration: 0.3 }}
-          className="shrink-0 text-accent sm:rotate-0"
+          className="shrink-0 text-accent"
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </motion.span>
       </div>
 
-      {active && (
+      {isActive && (
         <motion.span
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: [1, 1.4, 1], opacity: 1 }}

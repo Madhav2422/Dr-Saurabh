@@ -6,7 +6,7 @@ import { servicesData } from "./servicesData";
 
 export default function ServicesPanels() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(0);
+  const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(null);
   const active = servicesData[activeIndex];
 
   return (
@@ -32,18 +32,10 @@ export default function ServicesPanels() {
                   transition={{ duration: 0.3 }}
                   style={{ originY: 0.5 }}
                 />
-                <span
-                  className={`font-mono text-xs tracking-widest transition-colors duration-300 ${
-                    isActive ? "text-accent" : "text-white/25"
-                  }`}
-                >
+                <span className={`font-mono text-xs tracking-widest transition-colors duration-300 ${isActive ? "text-accent" : "text-white/25"}`}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span
-                  className={`font-serif text-base font-bold leading-snug transition-colors duration-300 sm:text-lg ${
-                    isActive ? "text-accent" : "text-white group-hover:text-zinc-300"
-                  }`}
-                >
+                <span className={`flex-1 font-serif text-base font-bold leading-snug transition-colors duration-300 sm:text-lg ${isActive ? "text-accent" : "text-white group-hover:text-zinc-300"}`}>
                   {service.title}
                 </span>
                 <motion.span
@@ -121,29 +113,32 @@ export default function ServicesPanels() {
       </div>
 
       {/* ===== MOBILE: inline accordion ===== */}
-      <div className="flex flex-col lg:hidden">
+      <div className="flex flex-col gap-3 lg:hidden">
         {servicesData.map((service, i) => {
           const isOpen = mobileOpenIndex === i;
           return (
-            <div key={service.id} className="border-b border-white/8">
-              <button
-                onClick={() => setMobileOpenIndex(isOpen ? null : i)}
-                className={`flex w-full items-center gap-3 py-5 text-left transition-colors duration-300 ${
-                  isOpen ? "pl-3" : "pl-0"
-                }`}
-              >
-                <motion.span
-                  className="absolute h-0 w-[2px] bg-accent"
-                  initial={false}
-                  animate={{ height: isOpen ? "100%" : 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <span className={`font-mono text-xs tracking-widest ${isOpen ? "text-accent" : "text-white/25"}`}>
-                  {String(i + 1).padStart(2, "0")}
+            <div
+              key={service.id}
+              onClick={() => setMobileOpenIndex(isOpen ? null : i)}
+              className={`cursor-pointer overflow-hidden rounded-xl border transition-colors duration-300 ${
+                isOpen ? "border-accent/40 bg-accent/[0.05]" : "border-white/8 bg-white/[0.02]"
+              }`}
+            >
+              <div className="flex items-center gap-4 p-5">
+                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${
+                  isOpen ? "border-accent/50 bg-accent/10" : "border-white/10 bg-white/[0.02]"
+                }`}>
+                  <i
+                    className={`ti ${service.icon}`}
+                    style={{ fontSize: "17px", color: isOpen ? "#38bdf8" : "rgba(255,255,255,0.35)" }}
+                    aria-hidden="true"
+                  />
                 </span>
-                <span className={`flex-1 font-serif text-base font-bold leading-snug ${isOpen ? "text-accent" : "text-white"}`}>
+
+                <span className={`flex-1 font-serif text-lg font-bold transition-colors duration-300 ${isOpen ? "text-accent" : "text-white"}`}>
                   {service.title}
                 </span>
+
                 <motion.span
                   animate={{ rotate: isOpen ? 45 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -154,7 +149,7 @@ export default function ServicesPanels() {
                     <path d="M12 5v14M5 12h14" />
                   </svg>
                 </motion.span>
-              </button>
+              </div>
 
               <AnimatePresence>
                 {isOpen && (
@@ -165,19 +160,9 @@ export default function ServicesPanels() {
                     transition={{ duration: 0.35, ease: "easeOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="relative overflow-hidden rounded-xl border border-accent/20 bg-accent/[0.04] p-5 mb-5">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/40 bg-accent/10">
-                          <i className={`ti ${service.icon} text-accent`} style={{ fontSize: "18px" }} aria-hidden="true" />
-                        </span>
-                        <p className="text-base font-semibold leading-snug text-accent">
-                          {service.tagline}
-                        </p>
-                      </div>
-                      <p className="mt-4 text-sm leading-relaxed text-zinc-300">
-                        {service.description}
-                      </p>
-                    </div>
+                    <p className="px-5 pb-5 pl-[76px] text-sm leading-relaxed text-zinc-400">
+                      {service.description}
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>

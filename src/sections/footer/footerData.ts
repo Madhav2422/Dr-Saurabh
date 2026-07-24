@@ -6,13 +6,35 @@ export type FooterLink = {
 export const quickLinks: FooterLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Services", href: "/services" },
+  { label: "Clinical Practice", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
-export const contactInfo = {
-  phone: "+1 (555) 911-0199",
-  email: "dr.saurabh@hospital.com",
-  location: "City General Hospital, ER Dept.",
+export type ContactItem = {
+  icon: string;
+  label: string;
+  value: string;
+  href: string;
 };
+
+export const contactInfo: ContactItem[] = [
+  {
+    icon: "ti-phone",
+    label: "Phone",
+    value: "+91 9664873365",
+    href: "tel:+919664873365",
+  },
+  {
+    icon: "ti-mail",
+    label: "Email",
+    value: "hiranisaurabh3@gmail.com",
+    href: "mailto:hiranisaurabh3@gmail.com",
+  },
+  {
+    icon: "ti-brand-linkedin",
+    label: "LinkedIn",
+    value: "dr-saurabh-hirani",
+    href: "https://www.linkedin.com/in/dr-saurabh-hirani",
+  },
+];

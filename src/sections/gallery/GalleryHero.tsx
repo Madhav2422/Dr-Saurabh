@@ -19,9 +19,7 @@ export default function GalleryHero() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-6 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] text-accent"
         >
-          <span className="h-px w-8 bg-accent/50" />
-          Gallery
-          <span className="h-px w-8 bg-accent/50" />
+        
         </motion.div>
 
         <h1 className="font-serif text-4xl font-bold text-white sm:text-6xl">

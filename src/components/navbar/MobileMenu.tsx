@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "./navLinks";
 
 export default function MobileMenu() {
@@ -10,44 +11,85 @@ export default function MobileMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="relative">
+    <>
+      {/* Hamburger */}
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Toggle menu"
         aria-expanded={open}
-        className="flex h-10 w-10 items-center justify-center rounded-md text-zinc-700 dark:text-zinc-200"
+        className="flex h-10 w-10 items-center justify-center text-white"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
-          {open ? (
-            <path d="M6 6l12 12M6 18L18 6" strokeLinecap="round" />
-          ) : (
-            <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
-          )}
+          <AnimatePresence mode="wait" initial={false}>
+            {open ? (
+              <motion.path
+                key="close"
+                d="M6 6l12 12M6 18L18 6"
+                strokeLinecap="round"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+              />
+            ) : (
+              <motion.path
+                key="open"
+                d="M4 6h16M4 12h16M4 18h16"
+                strokeLinecap="round"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+              />
+            )}
+          </AnimatePresence>
         </svg>
       </button>
 
-      {open && (
-        <div className="absolute right-0 mt-2 w-48 rounded-lg border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
-          {navLinks.map((link) => {
-            const isActive =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`block rounded-md px-3 py-2 text-sm font-medium uppercase tracking-wide transition-colors ${
-                  isActive
-                    ? "text-accent"
-                    : "text-zinc-600 hover:text-accent dark:text-zinc-300"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </div>
-      )}
-    </div>
+      {/* Fullscreen overlay menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="menu"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed left-0 right-0 top-20 z-50"
+            style={{
+              background: "linear-gradient(180deg, rgba(4,7,12,0.97) 0%, rgba(4,7,12,0.92) 100%)",
+              backdropFilter: "blur(20px)",
+              borderBottom: "1px solid rgba(56,189,248,0.12)",
+            }}
+          >
+            <div className="flex flex-col items-center py-8 gap-1">
+              {navLinks.map((link, i) => {
+                const isActive =
+                  link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2, delay: i * 0.05 }}
+                    className="w-full"
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`block w-full py-3.5 text-center text-sm font-medium uppercase tracking-[0.25em] transition-colors ${
+                        isActive ? "text-accent" : "text-zinc-300 hover:text-accent"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
