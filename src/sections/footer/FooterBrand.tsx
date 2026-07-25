@@ -16,9 +16,8 @@ export default function FooterBrand() {
         </span>
       </div>
 
-      <p className="mt-5 max-w-xs text-sm leading-relaxed text-zinc-400">
-        Board-certified Emergency Medicine physician dedicated to providing
-        life-saving care when every second counts.
+      <p className="mt-5 max-w-xs text-md leading-relaxed text-zinc-400">
+      Focused on combining clinical expertise, evidence-based practice, and compassionate care to achieve the best possible outcomes for every patient.
       </p>
     </motion.div>
   );

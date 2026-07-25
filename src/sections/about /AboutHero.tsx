@@ -51,7 +51,7 @@ export default function AboutHero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-6 text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
-          A career built on the frontlines of emergency care.
+        Driven by purpose. Guided by evidence. Focused on patient care.
         </motion.p>
       </div>
     </section>

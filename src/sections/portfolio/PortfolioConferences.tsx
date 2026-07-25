@@ -7,7 +7,7 @@ import { SectionLabel } from "./PortfolioResearch";
 export default function PortfolioConferences() {
   return (
     <div>
-      <SectionLabel number="02" title="Conferences" icon="ti-building" />
+      <SectionLabel number="03" title="Conferences" icon="ti-building" />
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {conferences.map((conf, i) => (

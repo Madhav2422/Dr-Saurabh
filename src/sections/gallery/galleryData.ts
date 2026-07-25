@@ -27,12 +27,12 @@ export const galleryImages: GalleryImage[] = [
   // 4-5. Teaching pics
   {
     id: "g4",
-    src: "/gallery-10.jpeg",
+    src: "/gallery-10-sharpened.jpeg",
     alt: "Teaching a First Aid and CPR workshop",
   },
   {
     id: "g5",
-    src: "/gallery-11.jpeg",
+    src: "/gallery-11-sharpened.jpeg",
     alt: "CPR training demonstration",
   },
 

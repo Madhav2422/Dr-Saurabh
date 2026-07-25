@@ -22,7 +22,7 @@ export default function ServicesHero() {
         </motion.div>
 
         <h1 className="font-serif text-4xl font-bold text-white sm:text-6xl">
-          {["Clinical", "Services"].map((word, i) => (
+          {["Clinical", "Practice"].map((word, i) => (
             <motion.span
               key={word}
               initial={{ opacity: 0, y: 30, rotateX: -40 }}

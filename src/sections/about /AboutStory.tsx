@@ -22,12 +22,12 @@ export default function AboutStory() {
         Passion for <span className="text-accent">Emergency Medicine</span>
       </h2>
 
-      <div className="mt-6 flex flex-col gap-5 text-[15px] leading-relaxed text-zinc-400 sm:text-base">
+      <div className="mt-6 flex flex-col gap-6 text-[15px] leading-relaxed text-zinc-400 sm:text-base">
         <p>
           Emergency Medicine is where knowledge, teamwork, and decisive action come together to make the greatest impact. Every patient presents a unique challenge, requiring rapid assessment, sound clinical judgment, and timely intervention. This dynamic environment is what continues to inspire my commitment to Emergency Medicine.
         </p>
         <p>
-         Throughout my residency, I have managed diverse emergency presentations ranging from cardiac arrest, trauma, stroke, and sepsis to pediatric emergencies and toxicological cases. Alongside clinical practice, I actively participate in research, academic conferences, and continuous learning, with the goal of advancing Emergency Medicine and improving patient outcomes through evidence-based practice.
+         Throughout my residency, I have gained experience managing a broad spectrum of medical, surgical, trauma, pediatric, and toxicological emergencies. Alongside clinical practice, I actively participate in research, academic conferences, and continuous learning, with the goal of advancing Emergency Medicine and improving patient outcomes through evidence-based practice.
         </p>
       </div>
     </motion.div>

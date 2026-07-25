@@ -6,7 +6,7 @@ import { researchData } from "./portfolioData";
 export default function PortfolioResearch() {
   return (
     <div>
-      <SectionLabel number="01" title="Research" icon="ti-microscope" />
+      <SectionLabel number="02" title="Research" icon="ti-microscope" />
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         {/* Thesis */}

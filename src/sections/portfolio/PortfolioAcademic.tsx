@@ -7,7 +7,7 @@ import { SectionLabel } from "./PortfolioResearch";
 export default function PortfolioAcademic() {
   return (
     <div>
-      <SectionLabel number="04" title="Academic Activities" icon="ti-school" />
+      <SectionLabel number="05" title="Academic Activities" icon="ti-school" />
 
       <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {academicActivities.map((activity, i) => (

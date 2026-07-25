@@ -54,7 +54,7 @@ export default function HeroContent() {
         className="mt-6 max-w-xl border-l-2 border-accent/40 pl-4 text-[15px] leading-relaxed text-zinc-100 sm:mt-8 sm:pl-5 sm:text-lg sm:text-zinc-300"
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
       >
-        Dedicated Emergency Medicine physician committed to providing rapid, compassionate and evidence-based care for critically ill and injured patients.
+       Focused on combining clinical expertise, evidence-based practice, and compassionate care to achieve the best possible outcomes for every patient.
       </motion.p>
     </motion.div>
   );

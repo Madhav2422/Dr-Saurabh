@@ -3,6 +3,7 @@ import PortfolioConferences from "./PortfolioConferences";
 import PortfolioPresentations from "./PortfolioPresentations";
 import PortfolioAcademic from "./PortfolioAcademic";
 import PortfolioCertifications from "./PortfolioCertifications";
+import PortfolioOutreach from "./PortfolioOutReach";
 
 export default function PortfolioBody() {
   return (
@@ -17,6 +18,7 @@ export default function PortfolioBody() {
       />
 
       <div className="relative mx-auto max-w-6xl flex flex-col gap-20">
+         <PortfolioOutreach />
         <PortfolioResearch />
         <PortfolioConferences />
         <PortfolioPresentations />

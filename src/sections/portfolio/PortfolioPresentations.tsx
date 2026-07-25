@@ -7,7 +7,7 @@ import { SectionLabel } from "./PortfolioResearch";
 export default function PortfolioPresentations() {
   return (
     <div>
-      <SectionLabel number="03" title="Scientific Presentations" icon="ti-presentation" />
+      <SectionLabel number="04" title="Scientific Presentations" icon="ti-presentation" />
 
       <div className="mt-8 flex flex-col gap-5">
         {presentations.map((p, i) => (
@@ -34,10 +34,7 @@ export default function PortfolioPresentations() {
               {p.title}
             </p>
 
-            <div className="mt-4 flex items-center gap-2 text-sm text-zinc-500">
-              <i className="ti ti-map-pin text-accent/60" style={{ fontSize: "13px" }} />
-              {p.venue}
-            </div>
+          
 
             <div className="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-accent to-transparent transition-all duration-500 group-hover:w-full" />
           </motion.div>
