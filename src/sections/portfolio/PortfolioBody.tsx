@@ -1,7 +1,7 @@
 import PortfolioResearch from "./PortfolioResearch";
 import PortfolioConferences from "./PortfolioConferences";
 import PortfolioPresentations from "./PortfolioPresentations";
-import PortfolioAcademic from "./PortfolioAcademic";
+
 import PortfolioCertifications from "./PortfolioCertifications";
 import PortfolioOutreach from "./PortfolioOutReach";
 
@@ -22,7 +22,7 @@ export default function PortfolioBody() {
         <PortfolioResearch />
         <PortfolioConferences />
         <PortfolioPresentations />
-        {/* <PortfolioAcademic /> */}
+      
         <PortfolioCertifications />
       </div>
     </section>
