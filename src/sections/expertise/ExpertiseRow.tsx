@@ -7,13 +7,23 @@ import type { Expertise } from "./expertiseData";
 export default function ExpertiseRow({
   item,
   index,
+  openIndex,
+  setOpenIndex,
 }: {
   item: Expertise;
   index: number;
+  openIndex: number | null;
+  setOpenIndex: (i: number | null) => void;
 }) {
   const [hovered, setHovered] = useState(false);
-  const [tapped, setTapped] = useState(false);
-  const active = hovered || tapped;
+  const tapped = openIndex === index;
+  const active = tapped || hovered;
+
+  function handleClick() {
+    setHovered(false);
+    // Toggle: if already open close it, else open this one (closes others automatically)
+    setOpenIndex(tapped ? null : index);
+  }
 
   return (
     <motion.div
@@ -23,7 +33,7 @@ export default function ExpertiseRow({
       transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={() => setTapped((v) => !v)}
+      onClick={handleClick}
       className="group relative cursor-pointer border-b border-white/8 sm:cursor-default"
       style={{
         background: index % 2 === 0 ? "rgba(255,255,255,0.012)" : "transparent",
@@ -74,7 +84,6 @@ export default function ExpertiseRow({
             {item.title}
           </motion.h3>
 
-          {/* CSS transition instead of AnimatePresence — smooth on mobile */}
           <div
             className="overflow-hidden transition-all duration-300 ease-out"
             style={{
@@ -144,7 +153,6 @@ export default function ExpertiseRow({
         </motion.span>
       </div>
 
-      {/* Mobile pulse dot */}
       {active && (
         <motion.span
           initial={{ scale: 0, opacity: 0 }}
