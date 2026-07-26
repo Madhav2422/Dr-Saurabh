@@ -62,17 +62,7 @@ export const presentations = [
   },
 ];
 
-export const academicActivities = [
-  "Journal Club Presentations",
-  "Case-Based Academic Discussions",
-  "Mortality & Morbidity Meetings",
-  "Emergency Medicine Teaching Sessions",
-  "Bedside Clinical Teaching",
-  "Evidence-Based Medicine Discussions",
-  "Clinical Audit Participation",
-  "Departmental Academic Seminars",
-  "Poster Presentations at National Conferences",
-];
+
 
 export const certifications = [
   {

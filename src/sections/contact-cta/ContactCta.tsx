@@ -46,7 +46,7 @@ export default function ContactCta() {
           </div>
 
           {/* Letter-by-letter headline reveal */}
-          <h2 className="font-serif text-4xl font-bold text-white sm:text-6xl">
+          <h2 className="font-serif text-3xl font-bold text-white sm:text-5xl lg:text-6xl">
             {headline.split("").map((char, i) => (
               <motion.span
                 key={i}

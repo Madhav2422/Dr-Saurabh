@@ -25,13 +25,11 @@ export default function ContactDetails() {
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
           </span>
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            Available
+            Teleconsultation 
           </span>
         </div>
 
-        <p className="text-sm font-medium text-white">
-          Teleconsultation & Second Opinions
-        </p>
+        
         <p className="mt-1 text-xs leading-relaxed text-zinc-400">
           Available for online consultations, academic collaborations, and
           emergency medicine discussions.

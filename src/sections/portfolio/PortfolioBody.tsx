@@ -22,7 +22,7 @@ export default function PortfolioBody() {
         <PortfolioResearch />
         <PortfolioConferences />
         <PortfolioPresentations />
-        <PortfolioAcademic />
+        {/* <PortfolioAcademic /> */}
         <PortfolioCertifications />
       </div>
     </section>
