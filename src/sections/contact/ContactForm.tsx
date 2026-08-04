@@ -39,11 +39,17 @@ export default function ContactForm() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
       setStatus("success");
+
+      // Auto reset after 10 seconds
+      setTimeout(() => {
+        setStatus("idle");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      }, 10000);
+
     } catch {
       setStatus("error");
     }
   }
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -196,22 +202,11 @@ export default function ContactForm() {
                 transition={{ duration: 0.5, delay: 0.45 }}
                 className="mt-3 max-w-sm text-sm leading-relaxed text-zinc-400"
               >
-                Thank you for reaching out. Dr. Saurabh Hirani will review your message and respond within <span className="text-accent font-medium">24–48 hours</span>.
+                Thank you for reaching out. Dr. Saurabh Hirani will review your
+                message and get back to you shortly.
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/8 px-4 py-2 text-xs uppercase tracking-[0.15em] text-accent"
-              >
-                <motion.span
-                  animate={{ scale: [1, 1.4, 1], opacity: [1, 0.4, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="h-1.5 w-1.5 rounded-full bg-accent"
-                />
-                Response expected within 24–48 hours
-              </motion.div>
+            
             </div>
 
             <motion.button
