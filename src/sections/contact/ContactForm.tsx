@@ -21,35 +21,34 @@ export default function ContactForm() {
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
+  setStatus("sending");
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("sending");
+  try {
+    await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    );
+    setStatus("success");
 
-    try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          message: form.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      setStatus("success");
+    setTimeout(() => {
+      setStatus("idle");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    }, 10000);
 
-      // Auto reset after 10 seconds
-      setTimeout(() => {
-        setStatus("idle");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      }, 10000);
-
-    } catch {
-      setStatus("error");
-    }
+  } catch (err) {          // ← add "err" here
+    console.error("EmailJS Error:", err);  // ← add this line
+    setStatus("error");
   }
+}
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

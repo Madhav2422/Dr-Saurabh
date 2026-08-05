@@ -7,6 +7,7 @@ export const quickLinks: FooterLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Clinical Practice", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
