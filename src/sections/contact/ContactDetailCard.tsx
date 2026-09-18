@@ -12,11 +12,7 @@ export default function ContactDetailCard({
 }) {
   const href =
     detail.href ??
-    (detail.label === "Phone"
-      ? `tel:${detail.value.replace(/\s+/g, "")}`
-      : detail.label === "Email"
-      ? `mailto:${detail.value}`
-      : undefined);
+    (detail.label === "Email" ? `mailto:${detail.value}` : undefined);
 
   const isExternal = detail.label === "LinkedIn";
 

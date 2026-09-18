@@ -21,12 +21,6 @@ export type ContactItem = {
 
 export const contactInfo: ContactItem[] = [
   {
-    icon: "ti-phone",
-    label: "Phone",
-    value: "+91 9664873365",
-    href: "tel:+919664873365",
-  },
-  {
     icon: "ti-mail",
     label: "Email",
     value: "hiranisaurabh3@gmail.com",

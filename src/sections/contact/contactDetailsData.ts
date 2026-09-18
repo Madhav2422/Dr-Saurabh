@@ -6,7 +6,6 @@ export type ContactDetail = {
 };
 
 export const contactDetails: ContactDetail[] = [
-  { icon: "ti-phone", label: "Phone", value: "+91 9664873365" },
   { icon: "ti-mail", label: "Email", value: "hiranisaurabh3@gmail.com" },
   {
     icon: "ti-brand-linkedin",
