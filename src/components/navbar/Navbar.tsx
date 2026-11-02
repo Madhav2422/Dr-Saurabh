@@ -1,6 +1,7 @@
 import NavbarLeft from "./NavbarLeft";
 import NavbarLinks from "./NavbarLinks";
 import MobileMenu from "./MobileMenu";
+import CvButton from "./CvButton";
 
 export default function Navbar() {
   return (
@@ -8,11 +9,13 @@ export default function Navbar() {
       <nav className="flex h-20 w-full items-center justify-between px-8">
         <NavbarLeft />
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-8 xl:flex">
           <NavbarLinks />
+          <CvButton />
         </div>
 
-        <div className="md:hidden">
+        <div className="flex items-center gap-1 xl:hidden">
+          <CvButton light />
           <MobileMenu />
         </div>
       </nav>

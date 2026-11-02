@@ -17,7 +17,7 @@ export default function MobileMenu() {
         onClick={() => setOpen((v) => !v)}
         aria-label="Toggle menu"
         aria-expanded={open}
-        className="flex h-10 w-10 items-center justify-center text-white"
+        className="-mr-2 flex h-10 w-10 items-center justify-center text-white"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
           <AnimatePresence mode="wait" initial={false}>
