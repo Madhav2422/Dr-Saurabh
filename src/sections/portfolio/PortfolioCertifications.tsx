@@ -9,7 +9,7 @@ export default function PortfolioCertifications() {
     <div>
       <SectionLabel number="05" title="Certifications" icon="ti-certificate" />
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2">
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((cert, i) => (
           <motion.div
             key={cert.id}
@@ -17,7 +17,7 @@ export default function PortfolioCertifications() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.12 }}
-            className="group relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/[0.04] p-7"
+            className="group relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/[0.04] p-7 sm:odd:last:col-span-2 lg:odd:last:col-span-1"
           >
             <div
               className="pointer-events-none absolute -left-10 -top-10 h-36 w-36 rounded-full opacity-[0.1] blur-[60px]"

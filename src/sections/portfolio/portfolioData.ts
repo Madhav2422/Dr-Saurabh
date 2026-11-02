@@ -77,4 +77,10 @@ export const certifications = [
     title: "Advanced Cardiovascular Life Support (ACLS) Provider",
     icon: "ti-heartbeat",
   },
+  {
+    id: "pals",
+    org: "American Heart Association",
+    title: "Pediatric Advanced Life Support (PALS) Provider",
+    icon: "ti-mood-kid",
+  },
 ];
